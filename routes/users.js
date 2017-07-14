@@ -8,7 +8,7 @@ router.get('/', function(req, res, next) {
 			text: 'Hello, welcome to Astrajingga! :)'
 		};
 		
-		return res.send(200).json(botPayload);
+		return res.status(200).json(botPayload);
 });
 
 module.exports = router;
