@@ -46,25 +46,25 @@ app.use(function(err, req, res, next) {
 module.exports = app;
 
 // test
-// var bodyParser = require('body-parser');
-// var port = process.env.PORT || 1337;
-// app.use(bodyParser.urlencoded({extended: true}));
+var bodyParser = require('body-parser');
+var port = process.env.PORT || 1337;
+app.use(bodyParser.urlencoded({extended: true}));
 
-// app.listen(port, function(){
-		// console.log('Listening on port ' + port);
-// });
+app.listen(port, function(){
+		console.log('Listening on port ' + port);
+});
 
-// app.post('/hello', function(req,res, next){
-		// var userName = req.body.user_name;
-		// var botPayload = {
-			// text: 'Hello ' + userName + ', welcome to Astrajingga! :)'
-		// };
+app.post('/hello', function(req,res, next){
+		var userName = req.body.user_name;
+		var botPayload = {
+			text: 'Hello ' + userName + ', welcome to Astrajingga! :)'
+		};
 		
-		// if (userName !== 'slackbot'){
-			// return res.status(200).json(botPayload);
-		// }
-		// else {
-			// return res.status(200).end();
-		// }
-// });
+		if (userName !== 'slackbot'){
+			return res.status(200).json(botPayload);
+		}
+		else {
+			return res.status(200).end();
+		}
+});
 // test
